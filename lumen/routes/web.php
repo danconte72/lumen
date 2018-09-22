@@ -16,3 +16,12 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get("cadastrarVisitante[/{$nome}][/{$telefone}][/{$sexo}][/{$idade}][/{$idLocal}]", "VisitanteController@cadastrarVisitante");
+$router->get("listarporid/{id}", "AuditController@listarPorId");
+
+$router->get("listarTodasPerguntas", "AuditController@listarTodasPerguntas");
+
+$router->get("responder/{idPergunta}/{idResposta}", "AuditController@responder");
+
+$router->get("responderTodas/{arrayPerguntas}/{arrayRespostas}", "AuditController@responderTodas");
+
+$router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
