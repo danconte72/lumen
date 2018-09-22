@@ -24,3 +24,7 @@ $router->get("responder/{idPergunta}/{idResposta}", "AuditController@responder")
 $router->get("responderTodas/{arrayPerguntas}/{arrayRespostas}", "AuditController@responderTodas");
 
 $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
+
+$router ->post("cadastrarUsuario/{$nome}/{$eMail}/{$sexo}/{$telefone}/{$CPF}/{$DataNasc}}", "UsuarioController@cadastarUsuario");
+
+$router ->post("cadastrarLocal/{$cidade}/{$bairro}", "LocalController@cadastrarLocal");
