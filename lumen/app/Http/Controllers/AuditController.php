@@ -190,8 +190,3 @@ private $perguntas = [
         }
     }
 }
-
-//audit/listar - Lista as perguntas e o codigo
-//audit/listar/{id} - Lita as possiveis respostas
-//audit/responder/{idPergunta}/{idResposta}
-    //$this->respostas = 
