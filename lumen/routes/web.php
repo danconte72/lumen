@@ -20,3 +20,12 @@ $router-get("/chat/{protocolo}/mensagens" , "MensagensCOntroller@listar");
 $router-get("/chat", "ChatController@criarChat");
 $router-get("/chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 $router-get("/chat/{protocolo}/atendente", "ChatController@insereAtendente");
+$router->get("listarporid/{id}", "AuditController@listarPorId");
+
+$router->get("listarTodasPerguntas", "AuditController@listarTodasPerguntas");
+
+$router->get("responder/{idPergunta}/{idResposta}", "AuditController@responder");
+
+$router->get("responderTodas/{arrayPerguntas}/{arrayRespostas}", "AuditController@responderTodas");
+
+$router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
