@@ -16,7 +16,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router-post("/chat/{protocolo}/mensagens", "MensagensController@enviar");
-$router-get("/chat/{protocolo}/mensagens" , "MensagensCOntroller@listar");
+$router-get("/chat/{protocolo}/mensagens" , "MensagensController@listar");
 $router-get("/chat", "ChatController@criarChat");
 $router-get("/chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 $router-get("/chat/{protocolo}/atendente", "ChatController@insereAtendente");
