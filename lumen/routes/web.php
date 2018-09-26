@@ -25,7 +25,7 @@ $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
 $router->get("chat/{protocolo}/atendente", "ChatController@insereAtendente");
 
-$router->get("cadastrarVisitante[/{nome}][/{telefone}][/{sexo}][/{idade}][/{idLocal}]", "VisitanteController@CadastrarVisitante");
+$router->get("cadastrarVisitante[/{nome}/{telefone}/{sexo}/{idade}/{idLocal}]", "VisitanteController@CadastrarVisitante");
 
 $router->get("listarporid/{id}", "AuditController@listarPorId");
 
