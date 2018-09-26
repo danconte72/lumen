@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class ChatController extends BaseController
 {
     /**
      * Create a new controller instance.

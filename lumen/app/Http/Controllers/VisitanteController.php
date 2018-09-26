@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class VisitanteController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -14,7 +16,7 @@ class ExampleController extends Controller
         //
     }
 
-    public function CadastrarVistante ($nome,$telefone,$sexo,$idade,$idlocal)
+    public function cadastrarVisitante ($nome,$telefone,$sexo,$idade,$idLocal)
     {
         return response() -> json(
             [
