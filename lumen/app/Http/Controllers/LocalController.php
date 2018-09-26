@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-class UsuarioController extends Controller
+class LocalController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function cadastrarUsuario ($nome,$eMail,$sexo,$telefone,$CPF,$DataNasc) {
+    public function cadastrarLocal ($cidade,$bairro) {
 
         return response()->json(
             [                 
