@@ -25,7 +25,7 @@ $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
 $router->get("chat/{protocolo}/atendente", "ChatController@insereAtendente");
 
-$router->get("cadastrarVisitante[/{$nome}][/{$telefone}][/{$sexo}][/{$idade}][/{$idLocal}]", "VisitanteController@cadastrarVisitante");
+$router->get("cadastrarVisitante[/{nome}][/{telefone}][/{sexo}][/{idade}][/{idLocal}]", "VisitanteController@CadastrarVisitante");
 
 $router->get("listarporid/{id}", "AuditController@listarPorId");
 
@@ -37,6 +37,6 @@ $router->get("responderTodas/{arrayPerguntas}/{arrayRespostas}", "AuditControlle
 
 $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
 
-$router->post("cadastrarUsuario/{$nome}/{$eMail}/{$sexo}/{$telefone}/{$CPF}/{$DataNasc}}", "UsuarioController@cadastarUsuario");
+$router->post("cadastrarUsuario/{nome}/{eMail}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastarUsuario");
 
-$router->post("cadastrarLocal/{$cidade}/{$bairro}", "LocalController@cadastrarLocal");
+$router->post("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
