@@ -25,11 +25,8 @@ $router->get('/', function () use ($router) {
 
 // $router->get("chat/{protocolo}/atendente", "ChatController@insereAtendente");
 
-<<<<<<< HEAD
 // $router->get("cadastrarVisitante[/{nome}][/{telefone}][/{sexo}][/{idade}][/{idLocal}]", "VisitanteController@CadastrarVisitante");
-=======
 $router->get("cadastrarVisitante[/{nome}/{telefone}/{sexo}/{idade}/{idLocal}]", "VisitanteController@cadastrarVisitante");
->>>>>>> 86f4d70d56c650d65f7d5039f3b3f8cb1384cdce
 
 // $router->get("listarporid/{id}", "AuditController@listarPorId");
 
