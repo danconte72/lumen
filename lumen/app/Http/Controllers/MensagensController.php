@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class MensagensController extends Controller
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class MensagensController extends BaseController
 {
     /**
      * Create a new controller instance.
