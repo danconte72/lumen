@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-class LocalController extends Controller
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class LocalController extends BaseController
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function cadastrarLocal ($cidade,$bairro) {
+    public function CadastrarLocal ($cidade,$bairro) {
 
         return response()->json(
             [                 
