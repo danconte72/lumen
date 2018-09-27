@@ -11,7 +11,7 @@ class LocalController extends BaseController
      *
      * @return void
      */
-    public function CadastrarLocal ($cidade,$bairro) {
+    public function cadastrarLocal ($cidade,$bairro) {
 
         return response()->json(
             [                 
