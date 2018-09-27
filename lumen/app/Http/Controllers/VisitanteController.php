@@ -16,7 +16,7 @@ class VisitanteController extends BaseController
         //
     }
 
-    public function cadastrarVisitante ($nome,$telefone,$sexo,$idade,$idLocal)
+    public function cadastrarVisitante ($nome=null,$telefone=null,$sexo=null,$idade=null,$idLocal=null)
     {
         return response() -> json(
             [
