@@ -19,11 +19,7 @@ $router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
 
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
 
-<<<<<<< HEAD
-$router->get("chat", "ChatController@criarChat");
-=======
 $router->get("chat/{idVisitante}", "ChatController@criarChat");
->>>>>>> eb49a210d36ee85ade1754de5cb447556f45dea0
 
 $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
@@ -44,4 +40,3 @@ $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calc
 $router->get("cadastrarUsuario/{nome}/{eMail}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastarUsuario");
 
 $router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
-
