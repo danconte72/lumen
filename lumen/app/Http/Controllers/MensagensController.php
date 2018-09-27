@@ -42,11 +42,11 @@ class MensagensController extends BaseController
         return $mensagens;
     }
     
-    public function relatorioMensagens($idUsuario, $status, $remetente)
+    public function relatorioMensagens($filtros)
     {
         return response()->json(
             [
-                "idUsuario" =>  "001",
+                "id" =>  "001",
                 "status" => "E",
                 "remetente" => "A"
             ]
