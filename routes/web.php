@@ -15,6 +15,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get('/teste', function () use ($router) {
+    
+return  app('db')->select("SELECT * FROM users");
+});
+
+
 // $router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
 
 // $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
