@@ -41,8 +41,6 @@ class MensagensController extends BaseController
         ];
         return $mensagens;
     }
-<<<<<<< HEAD:lumen/app/Http/Controllers/MensagensController.php
-=======
     
     public function relatorioMensagens($filtros)
     {
@@ -54,5 +52,4 @@ class MensagensController extends BaseController
             ]
         );
     }
->>>>>>> cb4eddddd07d6b8a967be09bffa562af1d760a34:app/Http/Controllers/MensagensController.php
 }
