@@ -15,17 +15,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-<<<<<<< HEAD
 $router->get("chat/{protocolo}/{texto}/{remetente}/{status}", "MensagensController@enviar");
-=======
-$router->get('/teste', function () use ($router) {
-    
-return  app('db')->select("SELECT * FROM users");
-});
-
-
-// $router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
->>>>>>> c7273855257de3b021216fcf96ab7eeb98d7f968
 
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
 
