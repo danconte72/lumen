@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class UsuarioController extends Controller
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class UsuarioController extends BaseController
 {
     /**
      * Create a new controller instance.
