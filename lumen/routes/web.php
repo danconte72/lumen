@@ -40,3 +40,10 @@ $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calc
 $router->get("cadastrarUsuario/{nome}/{eMail}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastrarUsuario");
 
 $router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
+
+$router->get ("usuarios", "UsuarioController@listarUsuarios");
+
+$router->get ("local", "LocalController@listarlocal");
+
+$router->get ("categoria", "CategoriaController@listarlocal");
+

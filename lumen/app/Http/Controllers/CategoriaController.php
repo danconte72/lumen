@@ -12,4 +12,15 @@ class CategoriaController extends Controller
                 'id' => "123"
             ]);
     }
+    public function listarCategoria() {
+        $categorias = [
+            [
+                "nome" => "Álcool"
+            ],
+            [
+                "nome" => "Entorpecentes"
+            ]
+        ];
+        return $categorias;
+    }
 }

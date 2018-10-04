@@ -18,4 +18,18 @@ class LocalController extends BaseController
                 'id' => "1"
             ]);
     }
+    public function listarLocal () 
+    {
+        $local = [
+            [
+                "cidade" => "cacador"   ,         
+                "bairro" => "Municipios"
+            ],
+            [
+                "cidade" => "calmon",
+                "bairro" => "centro"
+            ]
+        ];
+        return $local;
+    }
 }

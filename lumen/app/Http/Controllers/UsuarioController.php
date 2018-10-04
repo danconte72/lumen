@@ -16,4 +16,28 @@ class UsuarioController extends Controller
                 'id' => "1"
             ]);
     }
+    public function listarUsuarios () 
+    {
+        $usuarios = [
+            [ 
+                "id" => "000001",
+                "nome" => "volmar",
+                "eMail" => "volmar@gmail.com",
+                "sexo" => "Masculino",
+                "telefone" => "49 3567-0000",
+                "CPF" => "000.111.222-33",
+                "DataNasc" => "24-12-1924"    
+            ],  
+            [
+                "id" => "000002",
+                "nome" => "guilherme",
+                "eMail" => "guilhermer@gmail.com",
+                "sexo" => "Masculino",
+                "telefone" => "49 3567-1111",
+                "CPF" => "012.345.678-90",
+                "DataNasc" => "05-10-1998"
+            ] 
+        ];
+        return $usuarios;
+    }
 }
