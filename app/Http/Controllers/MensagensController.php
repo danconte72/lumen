@@ -16,7 +16,7 @@ class MensagensController extends BaseController
         //
     }
 
-    public function enviar($texto, $remetente, $status)
+    public function enviar($protocolo,$texto, $remetente, $status)
     {
         return ["status"=> "Ok."];
     }
