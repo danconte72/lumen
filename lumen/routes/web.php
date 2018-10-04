@@ -15,11 +15,11 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-//$router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
+$router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
 
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
 
-//$router->get("chat/{idVisitante}", "ChatController@criarChat");
+$router->get("chat/{idVisitante}", "ChatController@criarChat");
 
 $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
