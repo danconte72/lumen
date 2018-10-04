@@ -24,4 +24,26 @@ class VisitanteController extends BaseController
             ]
         );
     }
+
+    public function listarVisitante()
+    {
+       $visitante = [
+            [
+                "id"=> "01",
+                "nome"=> "Andrei Maurina",
+                "telefone"=> "3567",
+                "idade"=> "19",
+                "uuid"=> "007"
+            ],
+            [
+                "id"=> "02",
+                "nome"=> "Guilherme",
+                "telefone"=> "3563",
+                "idade"=> "20",
+                "uuid"=> "024"
+            ]
+        ];
+        return $visitante;
+    }
+
 }
