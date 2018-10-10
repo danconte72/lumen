@@ -19,7 +19,7 @@ $router->post("chat/{protocolo}/mensagens", "MensagensController@enviar");
 
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
 
-$router->get("chat/{idVisitante}", "ChatController@criarChat");
+$router->get("chat", "ChatController@criarChat");
 
 $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
@@ -47,3 +47,6 @@ $router->get ("local", "LocalController@listarlocal");
 
 $router->get ("categoria", "CategoriaController@listarlocal");
 
+$router->post("cadastrarUsuario/{nome}/{eMail}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastarUsuario");
+
+$router->post("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
