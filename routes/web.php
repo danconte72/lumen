@@ -18,6 +18,11 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+
+$router->get('testeconte', function () use ($router) {
+    return app('db')->select("select * from users");
+});
+
 $router->get("chat/enviar/{protocolo}/{texto}/{remetente}/{status}", "MensagensController@enviar");
 
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
