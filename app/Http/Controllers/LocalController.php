@@ -12,24 +12,25 @@ class LocalController extends BaseController
      * @return void
      */
     public function cadastrarLocal ($cidade,$bairro) {
-
-        return response()->json(
-            [                 
-                'id' => "1"
-            ]);
+        // return response()->json(
+        //     [                 
+        //         'id' => "1"
+        //     ]);
+        return app('db')->select("SELECT idLocal as id;");
     }
     public function listarLocal () 
     {
-        $local = [
-            [
-                "cidade" => "cacador"   ,         
-                "bairro" => "Municipios"
-            ],
-            [
-                "cidade" => "calmon",
-                "bairro" => "centro"
-            ]
-        ];
-        return $local;
+        // $local = [
+        //     [
+        //         "cidade" => "cacador"   ,         
+        //         "bairro" => "Municipios"
+        //     ],
+        //     [
+        //         "cidade" => "calmon",
+        //         "bairro" => "centro"
+        //     ]
+        // ];
+        // return $local;
+        return app('db')->select("SELECT idLocal as id, cidade, bairro FROM mensagem;");
     }
 }

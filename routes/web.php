@@ -18,7 +18,6 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
 $router->get('testeconte', function () use ($router) {
     return app('db')->select("select * from users");
 });
