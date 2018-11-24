@@ -51,7 +51,7 @@ class MensagensController extends BaseController
         //         "status" => "E",
         //         "remetente" => "A"
         //     ]
-            return app('db')->select("SELECT SELECT idMensagem as id, status, remetente FROM mensagem;");
-        );
+        // );
+        return app('db')->select("SELECT SELECT idMensagem as id, status, remetente FROM mensagem;");
     }
 }

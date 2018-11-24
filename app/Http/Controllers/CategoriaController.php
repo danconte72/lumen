@@ -12,7 +12,7 @@ class CategoriaController extends Controller
         //     ]);
         return  app('db')->select("SELECT categoria FROM idCategoria, nome");
     }
-    // public function listarCategoria() {
+    public function listarCategoria() {
     //     $categorias = [
     //         [
     //             "nome" => "Álcool"
@@ -22,6 +22,6 @@ class CategoriaController extends Controller
     //         ]
     //     ];
     //     return $categorias;
-        return  app('db')->select("SELECT categoria FROM idCategoria, nome");
+        return  app('db')->select("SELECT categoria FROM idCategoria, nome;");
     }
 }
