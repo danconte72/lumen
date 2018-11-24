@@ -50,4 +50,6 @@ $router->get("cadastrarUsuario/{nome}/{eMail}/{sexo}/{telefone}/{CPF}/{DataNasc}
 
 $router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
 
+$router->get("testedaniel", "UsuarioController@listarUsuarios");
+
 $router->get("mensagens/relatorio[/{filtros}]", "mensagensController@relatorioMensagens");
