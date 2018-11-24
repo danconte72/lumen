@@ -18,7 +18,7 @@ class UsuarioController extends BaseController
         //     [                 
         //         'id' => "1"
         //     ]);
-        return app('db')->select("SELECT idUsuario FROM usuario");
+        return app('db')->select("SELECT idUsuario as id FROM usuario");
     }
     public function listarUsuarios () 
     {

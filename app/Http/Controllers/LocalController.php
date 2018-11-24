@@ -16,7 +16,7 @@ class LocalController extends BaseController
         //     [                 
         //         'id' => "1"
         //     ]);
-        return app('db')->select("SELECT idLocal FROM local;");
+        return app('db')->select("SELECT idLocal as id FROM local;");
     }
     public function listarLocal () 
     {

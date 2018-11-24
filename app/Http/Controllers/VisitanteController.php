@@ -24,7 +24,7 @@ class VisitanteController extends BaseController
         //         "idVisitante"=>"1"
         //     ]
         // );
-        return app('db')->select("SELECT idvisitante FROM visitante;");
+        return app('db')->select("SELECT idvisitante as id FROM visitante;");
     }
 
     public function listarVisitante()
@@ -46,6 +46,6 @@ class VisitanteController extends BaseController
     //         ]
     //     ];
     //     return $visitante;
-        return app('db')->select("SELECT idvisitante, nome, telefone, idade, uuid FROM visitante;");
+        return app('db')->select("SELECT idvisitante as id, nome, telefone, idade, uuid FROM visitante;");
     }
 }

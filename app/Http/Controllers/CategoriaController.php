@@ -10,7 +10,7 @@ class CategoriaController extends Controller
         //     [                 
         //         'id' => "123"
         //     ]);
-        return app('db')->select("SELECT idCategoria FROM categoria");
+        return app('db')->select("SELECT idCategoria as id FROM categoria");
     }
     public function listarCategoria() {
     //     $categorias = [
