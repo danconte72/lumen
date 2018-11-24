@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 
@@ -23,7 +24,7 @@ class VisitanteController extends BaseController
         //         "idVisitante"=>"1"
         //     ]
         // );
-        return app('db')->select("SELECT id visitantes as id;");
+        return app('db')->select("SELECT idvisitante FROM visitante;");
     }
 
     public function listarVisitante()
@@ -45,6 +46,6 @@ class VisitanteController extends BaseController
     //         ]
     //     ];
     //     return $visitante;
-        return app('db')->select("SELECT id visitantes as id, nome, telefone, idade, uuId FROM visitante;");
+        return app('db')->select("SELECT idvisitante, nome, telefone, idade, uuid FROM visitante;");
     }
 }

@@ -16,7 +16,7 @@ class LocalController extends BaseController
         //     [                 
         //         'id' => "1"
         //     ]);
-        return app('db')->select("SELECT idLocal as id;");
+        return app('db')->select("SELECT idLocal FROM local;");
     }
     public function listarLocal () 
     {
@@ -31,6 +31,6 @@ class LocalController extends BaseController
         //     ]
         // ];
         // return $local;
-        return app('db')->select("SELECT idLocal as id, cidade, bairro FROM mensagem;");
+        return app('db')->select("SELECT cidade, bairro FROM local;");
     }
 }

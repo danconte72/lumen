@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 
@@ -18,7 +19,8 @@ class MensagensController extends BaseController
 
     public function enviar($protocolo,$texto, $remetente, $status)
     {
-        return ["status"=> "Ok."];
+        // return ["status"=> "Ok."];
+        return app('db')->select("SELECT status FROM mensagem;");
     }
 
     public function listar($protocolo)
@@ -40,7 +42,7 @@ class MensagensController extends BaseController
         //     ],
         // ];
         // return $mensagens;
-        return app('db')->select("SELECT idMensagem as id, texto, data, hora, remetente, status FROM mensagem;");
+        return app('db')->select("SELECT texto, data, hora, remetente, status FROM mensagem;");
     }
     
     public function relatorioMensagens($filtros=null)
@@ -52,6 +54,6 @@ class MensagensController extends BaseController
         //         "remetente" => "A"
         //     ]
         // );
-        return app('db')->select("SELECT SELECT idMensagem as id, status, remetente FROM mensagem;");
+        return app('db')->select("SELECT id, status, remetente FROM mensagem;");
     }
 }

@@ -14,10 +14,11 @@ class UsuarioController extends BaseController
      */
     public function cadastrarUsuario ($nome,$eMail,$sexo,$telefone,$CPF,$DataNasc) {
 
-        return response()->json(
-            [                 
-                'id' => "1"
-            ]);
+        // return response()->json(
+        //     [                 
+        //         'id' => "1"
+        //     ]);
+        return app('db')->select("SELECT idUsuario FROM usuario");
     }
     public function listarUsuarios () 
     {
@@ -41,6 +42,6 @@ class UsuarioController extends BaseController
         //         "DataNasc" => "05-10-1998"
         //     ] 
         // ];
-        return  app('db')->select("SELECT idUsuario as id, nome, eMail, sexo, telefone, CPF, dataNasc FROM usuario;");
+        return app('db')->select("SELECT id, nome, eMail, sexo, telefone, CPF, dataNasc FROM usuario");
     }
 }
