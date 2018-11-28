@@ -47,6 +47,6 @@ $router->get ("local", "LocalController@listarlocal");
 
 $router->get ("categoria", "CategoriaController@listarlocal");
 
-$router->post("cadastrarUsuario/{nome}/{eMail}/{login}/{senha}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastarUsuario");
+$router->get("cadastrarUsuario/{nome}/{eMail}/{login}/{senha}/{sexo}/{telefone}/{CPF}/{DataNasc}}", "UsuarioController@cadastarUsuario");
 
 $router->post("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
