@@ -16,7 +16,12 @@ class LocalController extends BaseController
         //     [                 
         //         'id' => "1"
         //     ]);
-        return app('db')->select("SELECT idLocal as id FROM local;");
+        // return app('db')->select("SELECT idLocal as id FROM local;");
+        $query = "INSERT INTO local (cidade, bairro) VALUES (";
+        $query += "'" . $cidade . "','" . $bairro ."');";
+        $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
+        return app('db')->select($query);
+        // SELECT currval(pg_get_serial_sequence('local','idLocal')) as id; -> Example.
     }
     public function listarLocal () 
     {
@@ -31,6 +36,6 @@ class LocalController extends BaseController
         //     ]
         // ];
         // return $local;
-        return app('db')->select("SELECT cidade, bairro FROM local;");
+        return app('db')->select("SELECT idLocal as id, cidade, bairro FROM local;");
     }
 }

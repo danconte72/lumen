@@ -10,7 +10,11 @@ class CategoriaController extends Controller
         //     [                 
         //         'id' => "123"
         //     ]);
-        return app('db')->select("SELECT idCategoria as id FROM categoria");
+        // return app('db')->select("SELECT idCategoria as id FROM categoria");
+        $query = "INSERT INTO categoria (nome) VALUES (";
+        $query += "'" . $nome ."')";
+        $query += "SELECT currval(pg_get_serial_sequence('categoria','idCategoria')) as id";
+        return app('db')->select($query);
     }
     public function listarCategoria() {
     //     $categorias = [
