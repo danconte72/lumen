@@ -12,15 +12,15 @@ class UsuarioController extends BaseController
      *
      * @return void
      */
-    public function cadastrarUsuario ($nome,$eMail,$sexo,$telefone,$CPF,$DataNasc) {
+    public function cadastrarUsuario ($nome,$eMail,$login,$senha,$sexo,$telefone,$CPF,$DataNasc) {
 
         // return response()->json(
         //     [                 
         //         'id' => "1"
         //     ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
-        $query = "INSERT INTO usuario (nome, eMail, sexo, telefone, CPF, dataNasc) VALUES (";
-        $query += "'" . $nome . "','" . $eMail . "'," . $sexo . "','" . $telefone . "','" . $CPF . "','" . $DataNasc ."')";
+        $query = "INSERT INTO usuario (nome, eMail, login, senha, sexo, telefone, CPF, dataNasc) VALUES (";
+        $query += "'" . $nome . "','" . $eMail . "','" . $login . "','" . $senha . "','" . $sexo . "','" . $telefone . "','" . $CPF . "','" . $DataNasc ."');";
         $query += "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
         echo $query;
         return app('db')->select($query);
