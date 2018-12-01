@@ -12,7 +12,7 @@ class UsuarioController extends BaseController
      *
      * @return void
      */
-    public function cadastrarUsuario ($idusuario,$nome,$eMail,$login,$senha,$sexo,$telefone,$CPF,$DataNasc) {
+    public function cadastrarUsuario ($idusuario,$nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc) {
 
         // return response()->json(
         //     [                 

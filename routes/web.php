@@ -46,7 +46,7 @@ $router->get("responderTodas/{arrayPerguntas}/{arrayRespostas}", "AuditControlle
 
 $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
 
-$router->get("cadastrarUsuario/{idusuario}/{nome}/{eMail}/{login}/{senha}/{sexo}/{telefone}/{CPF}/{DataNasc}", "UsuarioController@cadastrarUsuario");
+$router->get("cadastrarUsuario/{idusuario}/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}", "UsuarioController@cadastrarUsuario");
 
 $router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
 
