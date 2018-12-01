@@ -17,10 +17,14 @@ class MensagensController extends BaseController
         //
     }
 
-    public function enviar($protocolo,$texto, $remetente, $status)
+    public function enviar($protocolo,$texto,$remetente,$status)
     {
         // return ["status"=> "Ok."];
-        return app('db')->select("SELECT status FROM mensagem;");
+        // return app('db')->select("SELECT status FROM mensagem;");
+        $query = "INSERT INTO mensagem (texto, data, hora, remetente, status) VALUES (";
+        $query += "'" . $texto . "'," . $data . ",'" . $hora . "','" . $remetente . "'," . $status . "');";
+        $query += "SELECT currval(pg_get_serial_sequence('mensagem','protocolo')) as id;";
+        return app('db')->select($query);
     }
 
     public function listar($protocolo)
