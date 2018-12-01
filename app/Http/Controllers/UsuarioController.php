@@ -19,7 +19,7 @@ class UsuarioController extends BaseController
         //         'id' => "|".$nome."|".$eMail."|".$login."|".$senha."|".$sexo."|".$telefone."|".$CPF."|".$DataNasc
         //     ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
-        $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
+        $query = "INSERT INTO usuario (idusuario, nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
         $query += "'" . $idusuario . "','" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
         $query += "SELECT currval(pg_get_serial_sequence('usuario','idusuario')) as id";
         return app('db')->select($query);
