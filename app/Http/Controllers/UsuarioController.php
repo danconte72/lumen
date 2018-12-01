@@ -12,7 +12,7 @@ class UsuarioController extends BaseController
      *
      * @return void
      */
-    public function cadastrarUsuario ($nome,$eMail,$login,$senha,$sexo,$telefone,$CPF,$DataNasc) {
+    public function cadastrarUsuario ($idusuario,$nome,$eMail,$login,$senha,$sexo,$telefone,$CPF,$DataNasc) {
 
         // return response()->json(
         //     [                 
@@ -20,7 +20,7 @@ class UsuarioController extends BaseController
         //     ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
         $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
-        $query += "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
+        $query += "'" . $idusuario . "','" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
         $query += "SELECT currval(pg_get_serial_sequence('usuario','idusuario')) as id";
         return app('db')->select($query);
     }
