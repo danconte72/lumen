@@ -23,7 +23,7 @@ class UsuarioController extends BaseController
         $query += "'" . $nome . "'," . $email . ",'" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
         // $query += "SELECT currval(pg_get_serial_sequence('usuario','idusuario')) as id";
         echo $query;
-        return app('db')->exec($query);
+        // return app('db')->exec($query);
     }
     public function listarUsuarios () 
     {
