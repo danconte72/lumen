@@ -22,8 +22,8 @@ class MensagensController extends BaseController
         // return ["status"=> "Ok."];
         // return app('db')->select("SELECT status FROM mensagem;");
 
-        $query = "INSERT INTO mensagem (texto, data, hora, remetente, status) VALUES (";
-        $query .= "'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "'," . $status ."');";
+        $query = "INSERT INTO mensagem (protocolo, texto, data, hora, remetente, status) VALUES (";
+        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status ."');";
         // $query = "SELECT currval(pg_get_serial_sequence('mensagem','protocolo')) as id";
         return app('db')->select($query);
     }
