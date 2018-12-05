@@ -27,7 +27,7 @@ class LocalController extends BaseController
         // SELECT currval(pg_get_serial_sequence('local','idLocal')) as id; -> Example.
 
     }
-    public function listarLocal () 
+    public function listarLocal ()
     {
         // $local = [
         //     [
