@@ -17,7 +17,7 @@ class VisitanteController extends BaseController
         //
     }
 
-    public function cadastrarVisitante ($nome=null,$telefone=null,$sexo=null,$idade=null,$uuid=null)
+    public function cadastrarVisitante ($nome=null,$telefone=null,$sexo=null,$idade=null,$uuid=null,$local=null)
     {
         // return response() -> json(
         //     [
@@ -25,8 +25,8 @@ class VisitanteController extends BaseController
         //     ]
         // );
 
-        $query = "INSERT INTO local (nome, telefone, sexo, idade, uuid) VALUES (";
-        $query .= "'" . $nome . "','" . $telefone . "','" . $sexo . "','" . $idade . "'," . $uuid . "');";
+        $query = "INSERT INTO local (nome, telefone, sexo, idade, uuid, local) VALUES (";
+        $query .= "'" . $nome . "','" . $telefone . "','" . $sexo . "','" . $idade . "'," . $uuid . "'," . $local . "');";
         // $query = "SELECT currval(pg_get_serial_sequence('visitante','idVisitante')) as id";
         return app('db')->select($query);
     }
@@ -50,6 +50,6 @@ class VisitanteController extends BaseController
     //         ]
     //     ];
     //     return $visitante;
-        return app('db')->select("SELECT idvisitante as id, nome, telefone, idade, uuid FROM visitante;");
+        return app('db')->select("SELECT idvisitante as id, nome, telefone, sexo, idade, local, uuid FROM visitante;");
     }
 }
