@@ -23,8 +23,8 @@ class MensagensController extends BaseController
         // return app('db')->select("SELECT status FROM mensagem;");
 
         $query = "INSERT INTO mensagem (protocolo, texto, data, hora, remetente, status) VALUES (";
-        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status ."');";
-        // $query = "SELECT currval(pg_get_serial_sequence('mensagem','protocolo')) as id";
+        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status . "');";
+        // $query = "SELECT currval(pg_get_serial_sequence('mensagem','idMensagem')) as id";
         return app('db')->select($query);
     }
 
