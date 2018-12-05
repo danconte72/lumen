@@ -24,15 +24,10 @@ class VisitanteController extends BaseController
         //         "idVisitante"=>"1"
         //     ]
         // );
-        // return app('db')->select("SELECT idvisitante as id FROM visitante;");
-        $query = "INSERT INTO local (nome, telefone, sexo, idade, uuid) VALUES (";
-        $query += "'" . $nome . "'," . $telefone . ",'" . $sexo . "','" . $idade . "'," . $uuid . "');";
-        $query += "SELECT currval(pg_get_serial_sequence('visitante','idvisitante')) as id;";
-        return app('db')->select($query);
 
-        $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
-        $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc . "');";
-        // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
+        $query = "INSERT INTO local (nome, telefone, sexo, idade, uuid) VALUES (";
+        $query .= "'" . $nome . "','" . $telefone . "','" . $sexo . "','" . $idade . "'," . $uuid . "');";
+        // $query = "SELECT currval(pg_get_serial_sequence('visitante','idVisitante')) as id";
         return app('db')->select($query);
     }
 
