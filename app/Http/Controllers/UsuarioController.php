@@ -19,9 +19,9 @@ class UsuarioController extends BaseController
         //         'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
         //     ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
+
         $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
         $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
-        // app('db')->select($query);
         // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
         return app('db')->select($query);
     }
@@ -47,6 +47,6 @@ class UsuarioController extends BaseController
         //         "DataNasc" => "05-10-1998"
         //     ] 
         // ];
-        return app('db')->select("SELECT idUsuario as id, nome, eMail, sexo, telefone, CPF, dataNasc FROM usuario");
+        return app('db')->select("SELECT idUsuario as id, nome, eMail as eMail, sexo, telefone, CPF, dataNasc FROM usuario");
     }
 }
