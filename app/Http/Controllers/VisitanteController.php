@@ -29,6 +29,11 @@ class VisitanteController extends BaseController
         $query += "'" . $nome . "'," . $telefone . ",'" . $sexo . "','" . $idade . "'," . $uuid . "');";
         $query += "SELECT currval(pg_get_serial_sequence('visitante','idvisitante')) as id;";
         return app('db')->select($query);
+
+        $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
+        $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc . "');";
+        // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
+        return app('db')->select($query);
     }
 
     public function listarVisitante()

@@ -47,6 +47,6 @@ class UsuarioController extends BaseController
         //         "DataNasc" => "05-10-1998"
         //     ] 
         // ];
-        return app('db')->select("SELECT idUsuario as id, nome, eMail as eMail, sexo, telefone, CPF, dataNasc FROM usuario");
+        return app('db')->select("SELECT idUsuario as id, nome, eMail as eMail, login, sexo, telefone, CPF, dataNasc FROM usuario");
     }
 }
