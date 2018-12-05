@@ -49,8 +49,8 @@ $router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal
 
 $router->get("usuario", "UsuarioController@listarUsuarios");
 
-$router->get("mensagens/relatorio[/{filtros}]", "mensagensController@relatorioMensagens");
+$router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens");
 
-$router->get("cadastrarCategoria/{nome}", "categoriaController@cadastrarCategoria");
+$router->get("cadastrarCategoria/{nome}", "CategoriaController@cadastrarCategoria");
 
-$router->get("listarCategoria", "categoriaController@listarCategoria");
+$router->get("listarCategoria", "CategoriaController@listarCategoria");
