@@ -14,16 +14,16 @@ class UsuarioController extends BaseController
      */
         public function cadastrarUsuario ($nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc) {
 
-        // return response()->json(
-        //     [                 
-        //         'id' => "|".$nome."|".$eMail."|".$login."|".$senha."|".$sexo."|".$telefone."|".$CPF."|".$DataNasc
-        //     ]);
+        return response()->json(
+            [                 
+                'id' => "|".$nome."|".$eMail."|".$login."|".$senha."|".$sexo."|".$telefone."|".$CPF."|".$DataNasc
+            ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
-        $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
-        $query += "'" . $nome . "','" . $email . "','" ;
-        $query += $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
-        $query += "SELECT currval(pg_get_serial_sequence('usuario','idusuario')) as id";
-        return app('db')->select($query);
+        // $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
+        // $query += "'" . $nome . "','" . $email . "','" ;
+        // $query += $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
+        // $query += "SELECT currval(pg_get_serial_sequence('usuario','idusuario')) as id";
+        // return app('db')->select($query);
     }
     public function listarUsuarios () 
     {
