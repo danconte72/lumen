@@ -19,10 +19,9 @@ class UsuarioController extends BaseController
         //         'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
         //     ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
-        // $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
-        // $query += "'" . $nome . "','" . $email . "','" ;
-        // $query += $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
-        $query = "INSERT INTO ENTORPECENTE (NOME) VALUES ('loló');";
+        $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
+        $query .= "'" . $nome . "','" . $email . "','" ;
+        $query .= $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc ."');";
         // $query .= "SELECT currval(pg_get_serial_sequence('entorpecente','identorpecente')) as id";
         return app('db')->select($query);
     }
