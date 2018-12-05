@@ -24,7 +24,7 @@ class LocalController extends BaseController
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
 
         $query = "INSERT INTO local (cidade, bairro) VALUES (";
-        $query .= "'" . $cidade . "','" . $bairro . "','" ."');";
+        $query .= "'" . $cidade . "','" . $bairro . "');";
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
         return app('db')->select($query);
         
