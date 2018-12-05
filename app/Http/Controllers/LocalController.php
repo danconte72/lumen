@@ -23,9 +23,6 @@ class LocalController extends BaseController
         $query .= "'" . $cidade . "','" . $bairro . "');";
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
         return app('db')->select($query);
-
-        // SELECT currval(pg_get_serial_sequence('local','idLocal')) as id; -> Example.
-
     }
     public function listarLocal ()
     {

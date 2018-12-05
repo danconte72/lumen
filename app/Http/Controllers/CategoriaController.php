@@ -14,7 +14,7 @@ class CategoriaController extends Controller
 
         $query = "INSERT INTO categoria (nome) VALUES (";
         $query .= "'" . $nome . "');";
-        // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
+        // $query += "SELECT currval(pg_get_serial_sequence('categoria','idCategoria')) as id;";
         return app('db')->select($query);
     }
     public function listarCategoria() {
