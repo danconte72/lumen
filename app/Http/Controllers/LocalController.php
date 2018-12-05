@@ -11,7 +11,8 @@ class LocalController extends BaseController
      *
      * @return void
      */
-    public function cadastrarLocal ($cidade,$bairro) {
+    
+    public function cadastrarLocal (string $cidade,$bairro) {
         // return response()->json(
         //     [                 
         //         'id' => "1"
@@ -22,8 +23,8 @@ class LocalController extends BaseController
         // $query = "INSERT INTO local (cidade, bairro) VALUES ("'" . $cidade . "','" . $bairro . "');
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
 
-        $query = "INSERT INTO local VALUES ('$cidade[cidade]','$bairro[bairro]')";
-        $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
+        $query = "INSERT INTO local VALUES ('$cidade, $bairro), (cidade, bairro)";
+        // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
         return app('db')->select($query);
         
         // SELECT currval(pg_get_serial_sequence('local','idLocal')) as id; -> Example.
