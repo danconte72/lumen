@@ -16,7 +16,7 @@ class UsuarioController extends BaseController
 
         return response()->json(
             [                 
-                'id' => "|".$nome."|".$eMail."|".$login."|".$senha."|".$sexo."|".$telefone."|".$CPF."|".$DataNasc
+                'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
             ]);
         // return app('db')->select("SELECT idUsuario as id FROM usuario");
         // $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
