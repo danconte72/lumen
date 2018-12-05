@@ -26,7 +26,7 @@ class VisitanteController extends BaseController
         // );
 
         $query = "INSERT INTO local (nome, telefone, sexo, idade, uuid, local) VALUES (";
-        $query .= "'" . $nome . "','" . $telefone . "'," . $sexo . "," . $idade . "," . $uuid . "," . $local . ");";
+        $query .= "'" . $nome . "','" . $telefone . "','" . $sexo . "','" . $idade . "','" . $uuid . "','" . $local . "');";
         // $query = "SELECT currval(pg_get_serial_sequence('visitante','idVisitante')) as id";
         return app('db')->select($query);
     }
