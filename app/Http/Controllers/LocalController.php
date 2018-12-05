@@ -18,17 +18,14 @@ class LocalController extends BaseController
         //         'id' => "1"
         //     ]);
         // return app('db')->select("SELECT idLocal as id FROM local;");
-            // $query = "INSERT INTO local (cidade, bairro) VALUES (";
-            // $query += "'" . $cidade . "','" . $bairro . "');";
-        // $query = "INSERT INTO local (cidade, bairro) VALUES ("'" . $cidade . "','" . $bairro . "');
-        // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
 
         $query = "INSERT INTO local (cidade, bairro) VALUES (";
         $query .= "'" . $cidade . "','" . $bairro . "');";
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
         return app('db')->select($query);
-        
+
         // SELECT currval(pg_get_serial_sequence('local','idLocal')) as id; -> Example.
+
     }
     public function listarLocal () 
     {
