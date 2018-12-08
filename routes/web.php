@@ -45,20 +45,30 @@ $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 
 $router->get("chat/{protocolo}/atendente", "ChatController@insereAtendente");
 
-$router->get("visitante", "VisitanteController@listarVisitante");
+// Visitante
 
-$router->get("cadastrarVisitante[/{nome}/{telefone}/{sexo}/{idade}/{Local}]", "VisitanteController@cadastrarVisitante");
+$router->get("visitantes", "VisitanteController@listarVisitante");
 
-$router->get("cadastrarUsuario/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}", "UsuarioController@cadastrarUsuario");
+$router->get("visitante/cadastrar[/{nome}/{telefone}/{sexo}/{idade}/{Local}]", "VisitanteController@cadastrarVisitante");
 
-$router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
-
-$router->get("local", "CategoriaController@listarLocal");
+// Usuário
 
 $router->get("usuarios", "UsuarioController@listarUsuarios");
 
-$router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens");
+$router->get("cadastrarUsuario/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}", "UsuarioController@cadastrarUsuario");
+
+// Local
+
+$router->get("local", "CategoriaController@listarLocal");
+
+$router->get("cadastrarLocal/{cidade}/{bairro}", "LocalController@cadastrarLocal");
+
+// Categoria
 
 $router->get("cadastrarCategoria/{nome}", "CategoriaController@cadastrarCategoria");
 
 $router->get("listarCategoria", "CategoriaController@listarCategoria");
+
+// Mensagem
+
+$router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens");
