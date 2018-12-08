@@ -47,7 +47,7 @@ class MensagensController extends BaseController
         //     ],
         // ];
         // return $mensagens;
-        return app('db')->select("SELECT texto, data, hora, remetente, status FROM mensagem;");
+        return app('db')->select("SELECT * FROM mensagem WHERE protocolo = " . $protocolo . ";");
     }
     
     public function relatorioMensagens($filtros=null)

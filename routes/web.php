@@ -19,7 +19,7 @@ $router->get('testeconte', function () use ($router) {
     return app('db')->select("select * from users");
 });
 
-// Teste AUDIT
+/* Teste AUDIT */
 
 $router->get("listarTodasPerguntas", "AuditController@listarTodasPerguntas");
 
@@ -31,7 +31,7 @@ $router->get("responder/{idPergunta}/{idResposta}", "AuditController@responder")
 
 $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calcular");
 
-// Chat
+/* Chat */
 
 //Listar Atendimentos
 $router->get("chat", "ChatController@listarChat");
@@ -55,29 +55,34 @@ $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
 $router->get("relatorio_mensagem[/{status}/{remetente}/{idUsuario}]", "MensagensController@relatorioMensagens");
 /* $router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens"); */
 
-// Visitante
+/* Visitante */
 
+//Listar os Visitantes
 $router->get("visitantes", "VisitanteController@listarVisitante");
 
+//Cadastrar um Visitante
 $router->get("visitante/cadastrar[/{nome}/{telefone}/{sexo}/{idade}/{Local}]", "VisitanteController@cadastrarVisitante");
 
-// Usuário
+/* Usuário */
 
+//Listar Usuários
 $router->get("usuarios", "UsuarioController@listarUsuarios");
 
+//Cadastrar Usuário
 $router->get("usuario/cadastrar/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}", "UsuarioController@cadastrarUsuario");
 
-// Local
+/* Local */
 
-$router->get("local", "CategoriaController@listarLocal");
+//Listar local
+$router->get("locais", "CategoriaController@listarLocal");
 
+//Cadastrar um local
 $router->get("local/cadastrar/{cidade}/{bairro}", "LocalController@cadastrarLocal");
 
-// Categoria
+/* Categoria */
 
+//Listar as Categorias
 $router->get("categorias", "CategoriaController@listarCategoria");
 
+//Cadastrar Categoria
 $router->get("categoria/cadastrar/{nome}", "CategoriaController@cadastrarCategoria");
-
-// Mensagem
-
