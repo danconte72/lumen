@@ -36,7 +36,7 @@ class ChatController extends BaseController
         return ["id" => "26"];
     }
 
-    public function listarChat($protocolo)
+    public function listarChat()
     {
     // {
     //     return [
