@@ -44,6 +44,6 @@ class ChatController extends BaseController
     //             "id" => "2"
     //             ];
     // }
-    return app('db')->select("SELECT texto, data, hora, remetente, status FROM mensagem;");
+    return app('db')->select("SELECT protocolo status FROM atendimento;");
     }
 }
