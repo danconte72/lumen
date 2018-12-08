@@ -19,7 +19,11 @@ class ChatController extends BaseController
 
     public function criarChat($idVisitante)
     {
-        return ["protocolo" => "p1"];
+        // return ["protocolo" => "p1"];
+        $query = "INSERT INTO mensagem (protocolo, texto, data, hora, remetente, status) VALUES (";
+        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status . "');";
+        // $query = "SELECT currval(pg_get_serial_sequence('mensagem','idMensagem')) as id";
+        return app('db')->select($query);
     }
 
     public function finalizarChat($protocolo)
@@ -34,9 +38,12 @@ class ChatController extends BaseController
 
     public function listarChat($protocolo)
     {
-        return [
-                "id" => "1",
-                "id" => "2"
-                ];
+    // {
+    //     return [
+    //             "id" => "1",
+    //             "id" => "2"
+    //             ];
+    // }
+    return app('db')->select("SELECT texto, data, hora, remetente, status FROM mensagem;");
     }
 }
