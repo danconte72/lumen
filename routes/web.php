@@ -33,17 +33,27 @@ $router->get("calcular/{arrayPerguntas}/{arrayRespostas}", "AuditController@calc
 
 // Chat
 
+//Listar Atendimentos
 $router->get("chat", "ChatController@listarChat");
 
+//Enviar Mensagens
 $router->get("chat/enviar/{protocolo}/{texto}/{remetente}/{status}", "MensagensController@enviar");
 
+//Criar novo chat
 $router->get("chat/{idVisitante}", "ChatController@criarChat");
 
+//Listar Mensagens
 $router->get("chat/{protocolo}/mensagens" , "MensagensController@listar");
 
+//Inserir um atendente
 $router->get("chat/{protocolo}/atendente", "ChatController@insereAtendente");
 
+//Finalizar um chat
 $router->get("chat/{protocolo}/finalizar", "ChatController@finalizarChat");
+
+//Emitir Relatórios de mensagens
+$router->get("relatorio_mensagem[/{status}/{remetente}/{idUsuario}]", "MensagensController@relatorioMensagens");
+/* $router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens"); */
 
 // Visitante
 
@@ -71,4 +81,3 @@ $router->get("categoria/cadastrar/{nome}", "CategoriaController@cadastrarCategor
 
 // Mensagem
 
-$router->get("mensagens/relatorio[/{filtros}]", "MensagensController@relatorioMensagens");
