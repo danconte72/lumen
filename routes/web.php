@@ -74,7 +74,7 @@ $router->get("usuario/cadastrar/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}
 /* Local */
 
 //Listar local
-$router->get("locais", "CategoriaController@listarLocal");
+$router->get("locais", "LocalController@listarLocal");
 
 //Cadastrar um local
 $router->get("local/cadastrar/{cidade}/{bairro}", "LocalController@cadastrarLocal");
