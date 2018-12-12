@@ -25,9 +25,9 @@ class CargoController extends BaseController
         //     ]
         // ];
         // return $local;
-        return app('db')->select("SELECT * FROM cargo;");
+        return app('db')->select("SELECT idCargo as id, nome, setor FROM cargo;");
     }
-    public function cadastrarCargo (string $nome,$setor) {
+    public function cadastrarCargo (string $nome,$setor,$idCargo=null) {
         // return response()->json(
         //     [                 
         //         'id' => "1"
@@ -38,5 +38,25 @@ class CargoController extends BaseController
         $query .= "'" . $nome . "','" . $setor . "');";
         // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
         return app('db')->select($query);
+
+        /* */
+
+        // if ($idCargo != null){
+        //     $query = "UPDATE cargo
+        //               "' . $nome . '" = '',
+        //               rel = 'follow'
+        //               WHERE
+        //               ID = 1 
+        //               RETURNING id,
+        //               description,
+        //               rel;
+        //     // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
+        //     return app('db')->select($query);
+        // }else{
+        //     $query = "INSERT INTO cargo (nome, setor) VALUES (";
+        //     $query .= "'" . $nome . "','" . $setor . "');";
+        //     // $query += "SELECT currval(pg_get_serial_sequence('local','idLocal')) as id;";
+        //     return app('db')->select($query);
+        // }
     }
 }
