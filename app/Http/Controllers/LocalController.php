@@ -37,6 +37,6 @@ class LocalController extends BaseController
         //     ]
         // ];
         // return $local;
-        return app('db')->select("SELECT idLocal as id, cidade, bairro FROM local;");
+        return app('db')->select("SELECT * FROM local;");
     }
 }
