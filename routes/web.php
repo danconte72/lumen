@@ -86,3 +86,11 @@ $router->get("categorias", "CategoriaController@listarCategoria");
 
 //Cadastrar Categoria
 $router->get("categoria/cadastrar/{nome}", "CategoriaController@cadastrarCategoria");
+
+/* Cargo */
+
+//Listar os Cargos
+$router->get("cargos", "CargoController@listarCargo");
+
+//Cadastrar um Cargo
+$router->get("cargo/cadastrar/{nome}/{setor}", "CargoController@cadastrarCargo");
