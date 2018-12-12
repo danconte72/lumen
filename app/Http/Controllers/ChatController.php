@@ -28,12 +28,14 @@ class ChatController extends BaseController
 
     public function finalizarChat($protocolo)
     {
-        return ["Status" => "encerrado"];
+        // return ["Status" => "encerrado"];
+        return app('db')->select("SELECT * FROM mensagem WHERE protocolo = " . $protocolo . ";");
     }
 
     public function insereAtendente($protocolo)
     {
-        return ["id" => "26"];
+        // return ["id" => "26"];
+        return app('db')->select("SELECT * FROM mensagem WHERE protocolo = " . $protocolo . ";");
     }
 
     public function listarChat()
@@ -44,6 +46,7 @@ class ChatController extends BaseController
     //             "id" => "2"
     //             ];
     // }
-    return app('db')->select("SELECT protocolo, dataFim FROM atendimento;");
+    // return app('db')->select("SELECT protocolo, dataFim FROM atendimento;");
+    return app('db')->select("SELECT * FROM mensagem WHERE protocolo = " . $protocolo . ";");
     }
 }
