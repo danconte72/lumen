@@ -50,7 +50,7 @@ class NoticiaController extends BaseController
         // return app('db')->select("SELECT idNoticia as id FROM noticia");
         if ($idNoticia == null) {
             $query = "INSERT INTO noticia (titulo, corpo, referencia, imagem, categoria, usuario) VALUES (";
-            $query .= "'" . $titulo . "','" . $corpo . "','" . $referencia . "','" . $imagem . "'," . $categoria . "," . $usuario . ");";
+            $query .= "'" . $titulo . "','" . $corpo . "'," . CURRENT_TIMESTAMP() . ",'" . $referencia . "','" . $imagem . "'," . $categoria . "," . $usuario . ");";
             // $query = "SELECT currval(pg_get_serial_sequence('entorpecente','idEntorpecente')) as id";
             return app('db')->select($query);
         } else {

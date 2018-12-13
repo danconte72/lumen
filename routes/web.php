@@ -109,4 +109,4 @@ $router->get("entorpecente/cadastrar/{nome}", "EntorpecenteController@cadastrarE
 $router->get("feed/listar", "NoticiaController@listarNoticia");
 
 //Cadastrar uma Notícia
-$router->get("cadastrar/noticia/{titulo}/{corpo}/{data}/{referencia}/{hora}/{imagem}/{categoria}/{usuario}", "NoticiaController@cadastrarNoticia");
+$router->get("cadastrar/noticia/{titulo}/{corpo}/{referencia}/{imagem}/{categoria}/{usuario}", "NoticiaController@cadastrarNoticia");
