@@ -30,7 +30,7 @@ class NoticiaController extends BaseController
         return app('db')->select("SELECT idNoticia as id, titulo, corpo, data, referencia, hora, imagem, categoria, usuario FROM noticia");
     }
 
-    public function cadastrarNoticia ($titulo,$corpo,$data,$referencia,$hora,$imagem,$categoria,$usuario,$idNoticia=null) {
+    public function cadastrarNoticia ($titulo,$corpo,$referencia,$imagem,$categoria,$usuario,$idNoticia=null) {
         // return response()->json(
         // $cadastrar_nova_noticia  = [
         // { 
@@ -49,8 +49,8 @@ class NoticiaController extends BaseController
         // ]
         // return app('db')->select("SELECT idNoticia as id FROM noticia");
         if ($idNoticia == null) {
-            $query = "INSERT INTO noticia (titulo, corpo, data, referencia, hora, imagem, categoria, usuario) VALUES (";
-            $query .= "'" . $titulo . "','" . $corpo . "'," . $data . ",'" . $referencia . "'," . $hora . ",'" . $imagem . "'," . $categoria . "," . $usuario . ");";
+            $query = "INSERT INTO noticia (titulo, corpo, referencia, imagem, categoria, usuario) VALUES (";
+            $query .= "'" . $titulo . "','" . $corpo . "','" . $referencia . "','" . $imagem . "'," . $categoria . "," . $usuario . ");";
             // $query = "SELECT currval(pg_get_serial_sequence('entorpecente','idEntorpecente')) as id";
             return app('db')->select($query);
         } else {
