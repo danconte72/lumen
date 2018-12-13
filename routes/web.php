@@ -102,3 +102,11 @@ $router->get("entorpecentes", "EntorpecenteController@listarEntorpecente");
 
 //Cadastrar um Entorpecente
 $router->get("entorpecente/cadastrar/{nome}", "EntorpecenteController@cadastrarEntorpecente");
+
+/* Notícias */
+
+//Listar as Notícias
+$router->get("feed/listar", "NoticiaController@listarNoticia");
+
+//Cadastrar uma Notícia
+$router->get("cadastrar/noticia/{titulo}/{corpo}/{data}/{referencia}/{hora}/{imagem}/{categoria}/{usuario}", "NoticiaController@cadastrarNoticia");

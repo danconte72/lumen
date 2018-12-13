@@ -11,9 +11,8 @@ class CargoController extends BaseController
      *
      * @return void
      */
-
-    public function listarCargo ()
-    {
+    
+    public function listarCargo () {
         // $local = [
         //     [
         //         "cidade" => "cacador"   ,         
@@ -27,6 +26,7 @@ class CargoController extends BaseController
         // return $local;
         return app('db')->select("SELECT idCargo as id, nome, setor FROM cargo;");
     }
+
     public function cadastrarCargo (string $nome,$setor,$idCargo=null) {
         // return response()->json(
         //     [                 

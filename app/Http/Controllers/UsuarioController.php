@@ -12,26 +12,8 @@ class UsuarioController extends BaseController
      *
      * @return void
      */
-        public function cadastrarUsuario ($nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc,$idUsuario=null) {
-
-        // return response()->json(
-        //     [                 
-        //         'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
-        //     ]);
-        // return app('db')->select("SELECT idUsuario as id FROM usuario");
-        if ($idUsuario == null) {
-            $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
-            $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc . "');";
-            // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
-            return app('db')->select($query);
-        } else {
-            $query = "UPDATE usuario SET nome = '" . $nome . "', email = '" . $email . "', login = '" . $login . "', senha = '" . $senha . "', sexo = " . $sexo . ", telefone = '" . $telefone . "', cpf = '" . $cpf . "', datanasc = '" . $datanasc . "' WHERE idUsuario = '" . $idUsuario . "');";
-            return app('db')->select($query);
-        }
-
-    }
-    public function listarUsuarios () 
-    {
+    
+    public function listarUsuarios () {
         // $usuarios = [
         //     [ 
         //         "id" => "000001",
@@ -53,5 +35,22 @@ class UsuarioController extends BaseController
         //     ] 
         // ];
         return app('db')->select("SELECT idUsuario as id, nome, eMail as eMail, login, sexo, telefone, CPF, dataNasc FROM usuario");
+    }
+    
+    public function cadastrarUsuario ($nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc,$idUsuario=null) {
+        // return response()->json(
+        //     [                 
+        //         'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
+        //     ]);
+        // return app('db')->select("SELECT idUsuario as id FROM usuario");
+        if ($idUsuario == null) {
+            $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
+            $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc . "');";
+            // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
+            return app('db')->select($query);
+        } else {
+            $query = "UPDATE usuario SET nome = '" . $nome . "', email = '" . $email . "', login = '" . $login . "', senha = '" . $senha . "', sexo = " . $sexo . ", telefone = '" . $telefone . "', cpf = '" . $cpf . "', datanasc = '" . $datanasc . "' WHERE idUsuario = " . $idUsuario . ");";
+            return app('db')->select($query);
+        }
     }
 }
