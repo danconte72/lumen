@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 
-class UsuarioController extends BaseController
+class EntorpecenteController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -34,7 +34,7 @@ class UsuarioController extends BaseController
         //     },
         // ]
         // return app('db')->select("SELECT idEntorpecente as id FROM entorpecente");
-        if ($idUsuario == null) {
+        if ($idEntorpecente == null) {
             $query = "INSERT INTO entorpecente (nome) VALUES (";
             $query .= "'" . $nome . "');";
             // $query = "SELECT currval(pg_get_serial_sequence('entorpecente','idEntorpecente')) as id";
