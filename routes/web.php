@@ -94,3 +94,11 @@ $router->get("cargos", "CargoController@listarCargo");
 
 //Cadastrar um Cargo
 $router->get("cargo/cadastrar/{nome}/{setor}", "CargoController@cadastrarCargo");
+
+/* Entorpecente */
+
+//Listar os Entorpecentes
+$router->get("entorpecentes", "EntorpecenteController@listarEntorpecente");
+
+//Cadastrar um Entorpecente
+$router->get("entorpecente/cadastrar/{nome}", "EntorpecenteController@cadastrarEntorpecente");
