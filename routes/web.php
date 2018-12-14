@@ -69,7 +69,7 @@ $router->get("visitante/cadastrar[/{nome}/{telefone}/{sexo}/{idade}/{Local}]", "
 $router->get("usuarios", "UsuarioController@listarUsuarios");
 
 //Cadastrar Usuário
-$router->get("usuario/cadastrar/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}", "UsuarioController@cadastrarUsuario");
+$router->get("usuario/cadastrar/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}/{cpf}/{datanasc}[/{idUsuario}]", "UsuarioController@cadastrarUsuario");
 
 /* Local */
 
