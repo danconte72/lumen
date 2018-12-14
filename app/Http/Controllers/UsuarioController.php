@@ -49,7 +49,7 @@ class UsuarioController extends BaseController
             // $query = "SELECT currval(pg_get_serial_sequence('usuario','idUsuario')) as id";
             return app('db')->select($query);
         } else {
-            $query = "UPDATE usuario SET nome = '" . $nome . "', email = '" . $email . "', login = '" . $login . "', senha = '" . $senha . "', sexo = " . $sexo . ", telefone = '" . $telefone . "', cpf = '" . $cpf . "', datanasc = '" . $datanasc . "' WHERE idUsuario = " . $idUsuario . ");";
+            $query = "UPDATE usuario SET nome = '" . $nome . "', email = '" . $email . "', login = '" . $login . "', senha = '" . $senha . "', sexo = " . $sexo . ", telefone = '" . $telefone . "', cpf = '" . $cpf . "', datanasc = '" . $datanasc . "' WHERE idUsuario = " . $idUsuario . ")";
             return app('db')->select($query);
         }
     }
