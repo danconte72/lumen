@@ -13,36 +13,13 @@ class UsuarioController extends BaseController
      * @return void
      */
     
-    public function listarUsuarios () {
-        // $usuarios = [
-        //     [ 
-        //         "id" => "000001",
-        //         "nome" => "volmar",
-        //         "eMail" => "volmar@gmail.com",
-        //         "sexo" => "Masculino",
-        //         "telefone" => "49 3567-0000",
-        //         "CPF" => "000.111.222-33",
-        //         "DataNasc" => "24-12-1924"    
-        //     ],  
-        //     [
-        //         "id" => "000002",
-        //         "nome" => "guilherme",
-        //         "eMail" => "guilhermer@gmail.com",
-        //         "sexo" => "Masculino",
-        //         "telefone" => "49 3567-1111",
-        //         "CPF" => "012.345.678-90",
-        //         "DataNasc" => "05-10-1998"
-        //     ] 
-        // ];
+    public function listarUsuarios ()
+    {
         return app('db')->select("SELECT idUsuario as id, nome, eMail as eMail, login, sexo, telefone, CPF, dataNasc FROM usuario");
     }
     
-    public function cadastrarUsuario ($nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc,$idUsuario=null) {
-        // return response()->json(
-        //     [                 
-        //         'id' => "|".$nome."|".$email."|".$login."|".$senha."|".$sexo."|".$telefone."|".$cpf."|".$datanasc
-        //     ]);
-        // return app('db')->select("SELECT idUsuario as id FROM usuario");
+    public function cadastrarUsuario ($nome,$email,$login,$senha,$sexo,$telefone,$cpf,$datanasc,$idUsuario=null)
+    {
         if ($idUsuario == null) {
             $query = "INSERT INTO usuario (nome, email, login, senha, sexo, telefone, cpf, datanasc) VALUES (";
             $query .= "'" . $nome . "','" . $email . "','" . $login . "','" . $senha . "'," . $sexo . ",'" . $telefone . "','" . $cpf . "','" . $datanasc . "');";

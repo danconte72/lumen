@@ -12,20 +12,10 @@ class MensagensController extends BaseController
      *
      * @return void
      */
+
     public function __construct()
     {
         //
-    }
-
-    public function enviar($protocolo,$texto,$remetente,$status)
-    {
-        // return ["status"=> "Ok."];
-        // return app('db')->select("SELECT status FROM mensagem;");
-
-        $query = "INSERT INTO mensagem (protocolo, texto, data, hora, remetente, status) VALUES (";
-        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status . "');";
-        // $query = "SELECT currval(pg_get_serial_sequence('mensagem','idMensagem')) as id";
-        return app('db')->select($query);
     }
 
     public function listar($protocolo)
@@ -60,5 +50,15 @@ class MensagensController extends BaseController
         //     ]
         // );
         return app('db')->select("SELECT idMensagem as id, status, remetente FROM mensagem;");
+    }
+
+    public function enviar($protocolo,$texto,$remetente,$status)
+    {
+        // return ["status"=> "Ok."];
+        // return app('db')->select("SELECT status FROM mensagem;");
+        $query = "INSERT INTO mensagem (protocolo, texto, data, hora, remetente, status) VALUES (";
+        $query .= "" . $protocolo . ",'" . $texto . "','" . $data . "','" . $hora . "','" . $remetente . "','" . $status . "');";
+        // $query = "SELECT currval(pg_get_serial_sequence('mensagem','idMensagem')) as id";
+        return app('db')->select($query);
     }
 }

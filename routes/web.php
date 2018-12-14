@@ -61,7 +61,7 @@ $router->get("relatorio_mensagem[/{status}/{remetente}/{idUsuario}]", "Mensagens
 $router->get("visitantes", "VisitanteController@listarVisitante");
 
 //Cadastrar um Visitante
-$router->get("visitante/cadastrar[/{nome}/{telefone}/{sexo}/{idade}/{Local}]", "VisitanteController@cadastrarVisitante");
+$router->get("visitante/cadastrar[/{nome}/{telefone}/{sexo}/{idade}/{Local}/{idVisitante}]", "VisitanteController@cadastrarVisitante");
 
 /* Usuário */
 
@@ -77,7 +77,7 @@ $router->get("usuario/cadastrar/{nome}/{email}/{login}/{senha}/{sexo}/{telefone}
 $router->get("locais", "LocalController@listarLocal");
 
 //Cadastrar um local
-$router->get("local/cadastrar/{cidade}/{bairro}", "LocalController@cadastrarLocal");
+$router->get("local/cadastrar/{cidade}/{bairro}[/{idLocal}]", "LocalController@cadastrarLocal");
 
 /* Categoria */
 
@@ -85,7 +85,7 @@ $router->get("local/cadastrar/{cidade}/{bairro}", "LocalController@cadastrarLoca
 $router->get("categorias", "CategoriaController@listarCategoria");
 
 //Cadastrar Categoria
-$router->get("categoria/cadastrar/{nome}", "CategoriaController@cadastrarCategoria");
+$router->get("categoria/cadastrar/{nome}[/{idCategoria}]", "CategoriaController@cadastrarCategoria");
 
 /* Cargo */
 
@@ -93,7 +93,7 @@ $router->get("categoria/cadastrar/{nome}", "CategoriaController@cadastrarCategor
 $router->get("cargos", "CargoController@listarCargo");
 
 //Cadastrar um Cargo
-$router->get("cargo/cadastrar/{nome}/{setor}", "CargoController@cadastrarCargo");
+$router->get("cargo/cadastrar/{nome}/{setor}[/{idCargo}]", "CargoController@cadastrarCargo");
 
 /* Entorpecente */
 
@@ -101,7 +101,7 @@ $router->get("cargo/cadastrar/{nome}/{setor}", "CargoController@cadastrarCargo")
 $router->get("entorpecentes", "EntorpecenteController@listarEntorpecente");
 
 //Cadastrar um Entorpecente
-$router->get("entorpecente/cadastrar/{nome}", "EntorpecenteController@cadastrarEntorpecente");
+$router->get("entorpecente/cadastrar/{nome}[/{idEntorpecente}]", "EntorpecenteController@cadastrarEntorpecente");
 
 /* Notícias */
 
@@ -109,4 +109,4 @@ $router->get("entorpecente/cadastrar/{nome}", "EntorpecenteController@cadastrarE
 $router->get("feed/listar", "NoticiaController@listarNoticia");
 
 //Cadastrar uma Notícia
-$router->get("cadastrar/noticia/{titulo}/{corpo}/{referencia}/{imagem}/{categoria}/{usuario}", "NoticiaController@cadastrarNoticia");
+$router->get("cadastrar/noticia/{titulo}/{corpo}/{referencia}/{imagem}/{categoria}/{usuario}[/{idNoticia}]", "NoticiaController@cadastrarNoticia");
