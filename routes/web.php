@@ -61,7 +61,7 @@ $router->get("relatorio_mensagem[/{status}/{remetente}/{idUsuario}]", "Mensagens
 $router->get("visitantes", "VisitanteController@listarVisitante");
 
 //Cadastrar um Visitante
-$router->get("visitante/cadastrar[/{nome}/{sexo}/{idade}/{local}/{telefone}/{idVisitante}]", "VisitanteController@cadastrarVisitante");
+$router->get("visitante/cadastrar/{nome}/{sexo}/{idade}/{local}/{telefone}[/{idVisitante}]", "VisitanteController@cadastrarVisitante");
 
 /* Usuário */
 
