@@ -27,7 +27,7 @@ class VisitanteController extends BaseController
     {
         if ($idVisitante == null) {
             $query = "INSERT INTO visitante (nome, sexo, idade, local, telefone) VALUES (";
-            $query .= "'" . $nome . "'," . $sexo . "," . $idade . "," . $local . "," . $telefone . "');";
+            $query .= "'" . $nome . "'," . $sexo . "," . $idade . "," . $local . "," . $telefone . ");";
             // $query = "SELECT currval(pg_get_serial_sequence('visitante','idVisitante')) as id";
             return app('db')->select($query);
         } else {
