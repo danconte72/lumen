@@ -23,7 +23,7 @@ class VisitanteController extends BaseController
         return app('db')->select("SELECT idVisitante as id, nome, telefone, sexo, idade, uuid, local FROM visitante;");
     }
 
-    public function cadastrarVisitante ($nome,$telefone,$sexo,$idade,$uuid=null,$local,$idVisitante=null)
+    public function cadastrarVisitante ($nome,$telefone,$sexo,$idade,$local,$idVisitante=null)
     {
         if ($idVisitante == null) {
             $query = "INSERT INTO visitante (nome, telefone, sexo, idade, local) VALUES (";
