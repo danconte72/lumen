@@ -13,10 +13,10 @@ class VisitanteController extends BaseController
      * @return void
      */
 
-    public function __construct()
-    {
-        //
-    }
+    // public function __construct()
+    // {
+    //     //
+    // }
 
     public function listarVisitante()
     {
