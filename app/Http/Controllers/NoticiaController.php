@@ -22,7 +22,7 @@ class NoticiaController extends BaseController
     {
         if ($idNoticia == null) {
             $query = "INSERT INTO noticia (titulo, corpo, data, referencia, imagem, categoria, usuario) VALUES (";
-            $query .= "'" . $titulo . "','" . $corpo . "', CURRENT_TIMESTAMP(), '" . $referencia . "','" . $imagem . "'," . $categoria . "," . $usuario . ");";
+            $query .= "'" . $titulo . "','" . $corpo . "', CURRENT_TIMESTAMP, '" . $referencia . "','" . $imagem . "'," . $categoria . "," . $usuario . ");";
             // $query = "SELECT currval(pg_get_serial_sequence('noticia','idNoticia')) as id";
             return app('db')->select($query);
         } else {
