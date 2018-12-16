@@ -26,7 +26,7 @@ class NoticiaController extends BaseController
             // $query = "SELECT currval(pg_get_serial_sequence('noticia','idNoticia')) as id";
             return app('db')->select($query);
         } else {
-            $query = "UPDATE noticia SET titulo = '" . $titulo . "', corpo = '" . $corpo . "', data = " . $data . ", referencia = '" . $referencia . "', imagem = '" . $imagem . "', categoria = " . $categoria . ", usuario = " . $usuario . " WHERE idNoticia = " . $idNoticia . ";";
+            $query = "UPDATE noticia SET titulo = '" . $titulo . "', corpo = '" . $corpo . "', data = CURRENT_TIMESTAMP, referencia = '" . $referencia . "', imagem = '" . $imagem . "', categoria = " . $categoria . ", usuario = " . $usuario . " WHERE idNoticia = " . $idNoticia . ";";
             return app('db')->select($query);
         }
     }
