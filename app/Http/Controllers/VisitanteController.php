@@ -23,15 +23,15 @@ class VisitanteController extends BaseController
         return app('db')->select("SELECT idVisitante as id, nome, telefone, sexo, idade, uuid, local FROM visitante;");
     }
 
-    public function cadastrarVisitante ($nome=null,$sexo=null,$idade=null,$local=null,$telefone=null,$idVisitante=null)
+    public function cadastrarVisitante ($nome=null,$telefone=null,$sexo=null,$idade=null,$local=null,$idVisitante=null)
     {
         if ($idVisitante == null) {
-            $query = "INSERT INTO visitante (nome, sexo, idade, local, telefone) VALUES (";
-            $query .= "'" . $nome . "'," . $sexo . "," . $idade . "," . $local . "," . $telefone . ");";
+            $query = "INSERT INTO visitante (nome, telefone, sexo, idade, local) VALUES (";
+            $query .= "'" . $nome . "','" . $telefone . "'," . $sexo . "," . $idade . "," . $local . ");";
             // $query = "SELECT currval(pg_get_serial_sequence('visitante','idVisitante')) as id";
             return app('db')->select($query);
         } else {
-            $query = "UPDATE visitante SET nome = '" . $nome . "', sexo = " . $sexo . ", idade = " . $idade . ", local = " . $local . ", telefone = '" . $telefone . "' WHERE idVisitante = " . $idVisitante . ";";
+            $query = "UPDATE visitante SET nome = '" . $nome . "', telefone = '" . $telefone . "', sexo = " . $sexo . ", idade = " . $idade . ", local = " . $local . " WHERE idVisitante = " . $idVisitante . ";";
             return app('db')->select($query);
         }
     }
